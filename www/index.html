@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Годомодор Инсталлер</title>
+<meta name="theme-color" content="#0b1220">
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">🌿</div>
+  <h1>Годомодор Инсталлер</h1>
+</header>
+
+<main>
+
+  <section id="view-home" class="view active">
+    <p class="muted">Управляй модами для Geometry Dash 2.2.2091. Всё на русском, без VPN.</p>
+    <button class="btn primary" id="btn-refresh-home">Обновить каталог</button>
+
+    <div class="card">
+      <h3>Статус</h3>
+      <p id="home-status">Загрузка…</p>
+    </div>
+
+    <div class="card">
+      <h3>Как это работает</h3>
+      <ol class="steps">
+        <li>Найди мод в каталоге.</li>
+        <li>Нажми «Установить» — файл скачается и проверится по SHA-256.</li>
+        <li>Файл сохранится в папку из настроек.</li>
+        <li>Импортируй его в свой загрузчик модов.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="view-catalog" class="view">
+    <div class="row">
+      <input id="search" placeholder="Поиск мода…">
+      <button class="btn" id="btn-refresh">Обновить</button>
+    </div>
+    <div id="catalog-list" class="list"></div>
+  </section>
+
+  <section id="view-installed" class="view">
+    <div id="installed-list" class="list"></div>
+  </section>
+
+  <section id="view-settings" class="view">
+    <label class="field">
+      Папка назначения (относительно «Документы»)
+      <input id="set-path" placeholder="Godomodoro/mods">
+    </label>
+    <label class="check">
+      <input type="checkbox" id="set-verify" checked>
+      Проверять SHA-256 при установке
+    </label>
+    <button class="btn primary" id="btn-save-settings">Сохранить</button>
+    <p class="muted small">Совместимость: Geometry Dash 2.2.2091 (Android). Менеджер сам моды в игру не внедряет.</p>
+  </section>
+
+  <section id="view-logs" class="view">
+    <button class="btn" id="btn-clear-logs">Очистить журнал</button>
+    <div id="logs" class="logs"></div>
+  </section>
+
+</main>
+
+<nav class="tabs">
+  <button data-view="home" class="active">Главная</button>
+  <button data-view="catalog">Каталог</button>
+  <button data-view="installed">Установлено</button>
+  <button data-view="settings">Настройки</button>
+  <button data-view="logs">Журнал</button>
+</nav>
+
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

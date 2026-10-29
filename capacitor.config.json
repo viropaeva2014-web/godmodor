@@ -1,0 +1,6 @@
+{
+  "appId": "ru.godomodoro.installer",
+  "appName": "Годомодор Инсталлер",
+  "webDir": "www",
+  "server": { "androidScheme": "https" }
+}
